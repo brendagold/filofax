@@ -1,0 +1,57 @@
+@import 'style.css';
+
+.title {
+  color: var(--clr-light);
+}
+
+/* .text-area {
+  display: flex;
+  justify-content: center;
+} */
+
+.text-area {
+  position: relative;
+  top: 30px;
+  left: 20%;
+}
+
+.entry-btn {
+  display: block;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 0.5rem 1rem;
+  border: 1px solid #eee;
+  margin: 0.3rem 0;
+  border-radius: 5px;
+  width: 50%;
+}
+
+#text,
+#title {
+  background: transparent;
+  color: var(--clr-light);
+  border: 2px solid white;
+  width: 30%;
+}
+
+#title {
+  height: 40px;
+  display: block;
+  margin-bottom: 10px;
+  width: 30%;
+}
+
+small {
+  color: #ccc;
+}
+p {
+  font-family: sans-serif;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .text-area {
+    left: 20%;
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In | Sign Up</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="/index.html"> <h2>Filofax</h2> </a>
+      <a href="./dashboard.html" class="nav">Dashboard</a>
+      <!-- <a href="#news" class="nav">About</a> -->
+      <a href="./signup.html" class="nav">Login / Sign Up</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="hero">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" class="toggle-btn" onclick="login()">
+            Log In
+          </button>
+          <button type="button" class="toggle-btn" onclick="signup()">
+            Sign Up
+          </button>
+        </div>
+        <form id="login" action="" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Password"
+            required
+          />
+
+          <input type="checkbox" class="check-box" />
+          <span>Remember Password</span>
+
+          <button type="submit" class="submit-btn">Log In</button>
+        </form>
+        <form id="signup" action="" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="email"
+            class="input-field"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Password"
+            required
+          />
+
+          <input type="checkbox" class="check-box" />
+          <span>I agree to the terms and conditions</span>
+
+          <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../index.js"></script>
+  </body>
+</html>
