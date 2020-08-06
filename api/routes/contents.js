@@ -1,20 +1,7 @@
-const express = require('express');
+// const express = require('express');
+import express from 'express';
+import { contents } from '../content';
 const router = express.Router();
-
-const contents = [
-  {
-    id: '1',
-    title: 'A boring day',
-    desc:
-      'Today was so boring, i went to the market and i slept all day when  i returned',
-  },
-  {
-    id: '2',
-    title: 'So Happy i did it',
-    desc:
-      'Now I am better at writing web application, guess what, today i start learning apis, hurray',
-  },
-];
 
 router.get('/', (_, res) => {
   res.send('Your Express app is ready');
@@ -28,6 +15,24 @@ router.get('/contents/:id', (req, res) => {
   const { id } = req.params;
   const content = contents.filter((content) => content.id === id)[0];
   res.json({ ok: true, content });
+});
+
+router.put('/contents/:id', (req, res) => {
+  const { id } = req.params;
+  const content = contents.filter((content) => content.id === id)[0];
+  res.json({ ok: true, content });
+
+  content.title = req.body.title;
+  content.desc = req.body.desc;
+
+  res.json({ ok: true, content });
+});
+
+router.delete('/contents/:id', (req, res) => {
+  const { id } = req.params;
+  const content = contents.filter((content) => content.id === id)[0];
+
+  res.json({ ok: true, contents });
 });
 
 router.post('/addentry', (req, res) => {
