@@ -5,10 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node config.js",
-    "test": "jest",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "transpile": "babel ./app",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
