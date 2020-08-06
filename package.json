@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node config.js",
-    "test": "jasmine",
+    "test": "jest",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "transpile": "babel ./app",
-    "clean": "rimraf dist-server"
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",

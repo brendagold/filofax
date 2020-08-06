@@ -4,7 +4,7 @@ node_js:
   - node
 
 script:
-  - npm run test
+  - npm run test:coveralls
 
 after_script:
   - npm run deploy
