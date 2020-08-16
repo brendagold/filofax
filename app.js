@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 
 app.use('/', require('./api/routes/contents'));
 
-app.listen(port, () => {
+let server = app.listen(port, () => {
   console.log(`Express Server started on Port ${port}`);
 });
+
+module.exports = server;
