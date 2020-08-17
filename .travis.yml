@@ -7,7 +7,5 @@ script:
   - npm run test
 
 after_script:
-   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
+  - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
   - npm run deploy
-
-
