@@ -81,7 +81,7 @@ describe('Tasks API', () => {
       const content = {
         title: 'A New Day',
         desc: 'Today is Sunday, I am so grateful',
-        createdOn: '11:37:13 AM, Mon Aug 17 2020',
+        createdOn: '11:37:13 AM, Mon Aug 24 2020',
       };
       chai
         .request(server)
