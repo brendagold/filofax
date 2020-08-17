@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node config.js",
     "test": "mocha",
-    "test:coveralls": "mocha --coverage --coverageReporters=text-lcov | coveralls"
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -35,6 +35,7 @@
     "eslint": "^7.6.0",
     "jasmine": "^3.6.1",
     "jest": "^26.2.2",
-    "mocha": "^8.1.1"
+    "mocha": "^8.1.1",
+    "mocha-lcov-reporter": "^1.3.0"
   }
 }
