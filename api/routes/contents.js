@@ -55,10 +55,16 @@ router.delete('/contents/:id', (req, res) => {
 });
 
 router.post('/addentry', (req, res) => {
+  var today = new Date();
+
+  var date =
+    today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  console.log(date);
   const content = {
     id: contents.length + 1,
     title: req.body.title,
     desc: req.body.desc,
+    createdOn: req.body.createdOn,
   };
 
   if (!content)
