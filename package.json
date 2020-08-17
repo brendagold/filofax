@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node config.js",
     "test": "mocha",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -18,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/brendagold/filofax/issues"
   },
-  "homepage": "https://github.com/brendagold/filofax#readme",
+  "homepage": "https://github.com/brendagold/filofax",
   "dependencies": {
     "body-parser": "^1.19.0",
     "esm": "^3.2.25",
