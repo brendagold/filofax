@@ -55,22 +55,46 @@ router.delete('/contents/:id', (req, res) => {
 });
 
 router.post('/addentry', (req, res) => {
-  var today = new Date();
+  let today = new Date();
+  let reqBodyTitle = req.body.title;
+  let reqBodyDesc = req.body.desc;
+  let title = reqBodyTitle.trim();
+  let desc = reqBodyDesc.trim();
 
-  var date =
-    today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-  console.log(date);
   const content = {
     id: contents.length + 1,
-    title: req.body.title,
-    desc: req.body.desc,
-    createdOn: req.body.createdOn,
+    title: title,
+    desc: desc,
+    createdOn: today,
   };
 
-  if (!content)
-    return res
-      .status(400)
-      .send('The Entry must contain title and Description.');
+  if (!title) {
+    return res.status(400).json({
+      status: 'failed',
+      message: 'Please enter a title',
+    });
+  }
+
+  if (!desc) {
+    return res.status(400).json({
+      status: 'failed',
+      message: 'Please enter details of entry',
+    });
+  }
+
+  if (title.length < 5) {
+    return res.status(400).json({
+      status: 'failed',
+      message: 'Text must be at least 5 characters long',
+    });
+  }
+
+  if (desc.length < 5) {
+    return res.status(400).json({
+      status: 'failed',
+      message: 'Text must be at least 5 characters long',
+    });
+  }
 
   contents.push(content);
 
