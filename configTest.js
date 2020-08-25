@@ -1,6 +1,6 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = require('../config');
+let server = require('../server');
 
 //Assertion Style
 

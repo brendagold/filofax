@@ -1,18 +1,13 @@
-// const express = require('express');
-import express from 'express';
+const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
+const taskRouter = require('./api/routers/taskRouter');
 
 const app = express();
 
-const port = process.env.PORT || 3020;
+app.use(express.json({ limit: '10kb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use('/', taskRouter);
 
-app.use('/', require('./api/routes/contents'));
-
-let server = app.listen(port, () => {
-  console.log(`Express Server started on Port ${port}`);
-});
-
-module.exports = server;
+module.exports = app;

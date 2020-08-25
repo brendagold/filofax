@@ -99,12 +99,6 @@ router.post('/addentry', (req, res) => {
   contents.push(content);
 
   res.status(201).json({ ok: true, contents });
-  //res.status(201).send(content);
-  // const { id, title, desc } = req.body;
-  // if (id && title && desc) {
-  //   contents.push({ id, title, desc });
-  //   res.json({ ok: true, contents });
-  // }
 });
 
 module.exports = router;
